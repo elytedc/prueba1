@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V20</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='images/icons/favicon.ico')}}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/animate/animate.css')}}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+<!--===============================================================================================-->
+<style type="text/css">
+			
+    * {
+        margin:0px;
+        padding:0px;
+    }
+    
+    #header {
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    ul, ol {
+        list-style:none;
+    }
+    
+    .nav > li {
+        float:left;
+    }
+    
+    .nav li a {
+        background-color:#000;
+        color:#fff;
+        text-decoration:none;
+        padding:10px 12px;
+        display:block;
+    }
+    
+    .nav li a:hover {
+        background-color:#434343;
+    }
+    
+    .nav li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+    }
+    
+    .nav li:hover > ul {
+        display:block;
+    }
+    
+    .nav li ul li {
+        position:relative;
+    }
+    
+    .nav li ul li ul {
+        right:-140px;
+        top:0px;
+    }
+    
+</style>
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			{{ message }}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+	
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+
+
+
+
+</head>
+<body>
+
+    
+    <div class="limiter"></div>
+    
+        <div class="container-login100">
+		<div class="wrap-login100 p-b-160 p-t-50">
+            <div id="header" >
+            <ul class="nav">
+                <div class="col-md-7">
+                   
+
+
+                    <form action="http://127.0.0.1:5000/insertar_reseña" method="POST">
+
+                        <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+                            <span class="label-input100">ID </span>
+                        </div>
+                        <div class="wrap-input100 rs1 validate-input" data-validate = "Apellido is required">
+                            <input class="input100" type="text"  readonly="readonly" name="u" value="{{contact.0}}">
+                        </div>
+
+                        <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+                            <span class="label-input100">TITULO </span>
+                        </div>
+                        <div class="wrap-input100 rs1 validate-input" data-validate = "Apellido is required">
+                            <input class="input100" type="text"  readonly="readonly" name="u" value="{{contact.1}}">
+                        </div>
+
+                        <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+                            <span class="label-input100"> RESEÑA:</span>
+                        </div>
+    
+                        <div class="wrap-input100 rs1 validate-input" data-validate = "Usuario is required">
+                            <input class="input100" type="text" name="u1" >
+                        </div>
+    
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn">
+                                GUARDAR
+                            </button>
+                        </div>
+
+                    </form>
+
+                  </div>
+
+
+
+
+                
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{url_for('static', filename='vendor/daterangepicker/daterangepicker.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='vendor/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</body>
+</html>

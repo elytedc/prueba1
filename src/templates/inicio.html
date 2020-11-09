@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+      {% for message in messages %}
+      <div class="alert alert-success">{{ message }}</div>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+
+
+  <form action="http://127.0.0.1:5000/inicio" method="POST" >
+
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="contraseña" placeholder="contraseña">
+        <button type="submit">save 
+        </button>
+        
+    </form>
+    
+  
+
+  </body>
+</html>
